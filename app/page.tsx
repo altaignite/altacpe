@@ -1,93 +1,26 @@
-import { ArrowRight, Menu, Search, LockKeyhole, ShieldCheck, GraduationCap, Building2, BadgeCheck } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+
 
 const heroImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2466-OL1H7q5dUWihwuqs4l94sT9TYXoSQW.jpeg'
 
-function BrandMark() {
-  return (
-    <div className="brand-mark">
-      <img
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3A3E0E46-0426-4EDF-AC8F-CA8B2F7C05B4-tI1IJvQICyfqpm0QuX0L8K2t3XcM8j.png"
-        alt="Alta Professional Accreditation"
-      />
-    </div>
-  )
-}
-
-function Header() {
-  return (
-    <header className="site-header">
-      <div className="brand-wrap">
-        <BrandMark />
-      </div>
-      <div className="header-actions">
-        <button aria-label="Search"><Search /></button>
-        <button aria-label="Secure login"><LockKeyhole /></button>
-        <button className="menu-button" aria-label="Open menu"><Menu /></button>
-      </div>
-    </header>
-  )
-}
-
-function Benefit({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) {
-  return (
-    <article className="benefit">
-      <div className="benefit-icon">{icon}</div>
-      <h3>{title}</h3>
-      <p>{children}</p>
-    </article>
-  )
-}
-
 export default function Page() {
   return (
-    <main className="page-shell">
-      <Header />
-      <section className="hero-image" aria-label="Alta Professional Accreditation">
-        <img src={heroImage} alt="Professional learning session" />
-      </section>
-      <section className="intro-section">
-        <p className="eyebrow">Private continuing professional education body</p>
-        <h1>Raise the standard<br />of professional learning.</h1>
-        <p className="lead">Alta Professional Accreditation accredits training institutions and providers that deliver credible, relevant, and measurable continuing professional education.</p>
-        <a className="text-link" href="#about">Discover Alta <ArrowRight aria-hidden="true" /></a>
-        <a className="contact-button" href="#contact">Become accredited</a>
-      </section>
-      <section className="benefits-section" id="about">
-        <p className="eyebrow eyebrow-dark">What we do</p>
-        <h2>Trusted learning.<br />Recognised standards.</h2>
-        <div className="benefit-grid">
-          <Benefit title="Accredit providers" icon={<Building2 aria-hidden="true" />}>
-            We evaluate training institutions and providers against clear standards for quality, governance, learner support, and delivery.
-          </Benefit>
-          <Benefit title="Support professionals" icon={<GraduationCap aria-hidden="true" />}>
-            We help organisations offer continuing professional education that keeps people current, capable, and ready for what is next.
-          </Benefit>
-          <Benefit title="Recognise quality" icon={<BadgeCheck aria-hidden="true" />}>
-            Our accreditation gives learners and employers confidence in the value and integrity of approved learning experiences.
-          </Benefit>
+    <main>
+      <section className="hero-section" id="home" aria-labelledby="hero-heading">
+        <div className="hero-copy">
+          <p className="eyebrow">Alta Professional Accreditation</p>
+          <h1 id="hero-heading">Set the standard for <span>professional learning.</span></h1>
+          <p className="lead">Accreditation for training providers committed to credible, relevant, and measurable continuing professional education.</p>
+          <div className="hero-actions">
+            <a className="contact-button" href="/apply">Apply for accreditation <ArrowRight aria-hidden="true" /></a>
+            <a className="text-link" href="/standards">Explore assessment standards <ArrowRight aria-hidden="true" /></a>
+          </div>
+        </div>
+        <div className="hero-image">
+          <img src={heroImage} alt="Professional learning session" fetchPriority="high" />
         </div>
       </section>
-      <section className="standards-section" id="contact">
-        <div className="standards-icon"><ShieldCheck aria-hidden="true" /></div>
-        <div>
-          <p className="eyebrow">For training institutions &amp; providers</p>
-          <h2>Build trust through accreditation.</h2>
-          <p>Start a conversation about your organisation, your programmes, and the standard you want to set.</p>
-          <a className="contact-button contact-button-dark" href="mailto:hello@alta.ac">Talk to Alta <ArrowRight aria-hidden="true" /></a>
-        </div>
-      </section>
-      <footer className="site-footer">
-        <div className="footer-accordions">
-          <details><summary>Accreditation</summary><div className="footer-links"><a href="#about">What is accreditation?</a><a href="#about">Our standards</a><a href="#about">Quality framework</a><a href="#contact">Become accredited</a></div></details>
-          <details><summary>For providers</summary><div className="footer-links"><a href="#contact">Start an enquiry</a><a href="#contact">Accreditation process</a><a href="#contact">Provider resources</a><a href="#contact">FAQs</a></div></details>
-          <details><summary>About Alta</summary><div className="footer-links"><a href="#about">Our role</a><a href="#about">Continuing professional education</a><a href="#contact">Contact us</a></div></details>
-          <details><summary>Legal information</summary><div className="footer-links"><a href="#contact">Terms and conditions</a><a href="#contact">Privacy notice</a><a href="#contact">Accessibility</a><a href="#contact">Complaints policy</a></div></details>
-        </div>
-        <div className="footer-brand">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3A3E0E46-0426-4EDF-AC8F-CA8B2F7C05B4-tI1IJvQICyfqpm0QuX0L8K2t3XcM8j.png" alt="Alta Professional Accreditation" />
-          <p>Alta Professional Accreditation is a private continuing professional education body focused on accrediting training institutions and providers. Information on this website is provided for general purposes. Terms and conditions apply.</p>
-        </div>
-      </footer>
     </main>
+
   )
 }
