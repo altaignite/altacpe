@@ -102,6 +102,21 @@ export default function Header() {
           {navigation.map((group) => <section key={group.id}><h2>{group.label}</h2><ul>{group.links.map((link) => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}</ul></section>)}
           <a className="all-navigation-apply" href="/apply">Apply for accreditation <ArrowRight aria-hidden="true" /></a>
         </div>
+        <div className="mobile-navigation">
+          <a className="mobile-nav-link" href="/">Home <ArrowRight aria-hidden="true" /></a>
+          {navigation.map((group) => (
+            <details className="mobile-nav-group" name="mobile-navigation" key={group.id}>
+              <summary>{group.label}<ChevronDown aria-hidden="true" /></summary>
+              <ul>
+                {group.links.map((link) => <li key={link.href}><a className="mobile-nav-link" href={link.href}>{link.label}<ArrowRight aria-hidden="true" /></a></li>)}
+              </ul>
+            </details>
+          ))}
+          <a className="mobile-nav-link" href="/about">About us <ArrowRight aria-hidden="true" /></a>
+          <a className="mobile-nav-link" href="/faq">FAQ <ArrowRight aria-hidden="true" /></a>
+          <a className="mobile-nav-link" href="/contact">Contact us <ArrowRight aria-hidden="true" /></a>
+          <a className="mobile-nav-link mobile-nav-apply" href="/apply">Apply for accreditation <ArrowRight aria-hidden="true" /></a>
+        </div>
       </nav>
     </header>
   )

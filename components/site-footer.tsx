@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ChevronDown } from 'lucide-react'
 
 const groups = [
   { title: 'Accreditation', links: [
@@ -29,7 +30,7 @@ export default function Footer() {
       <nav className="footer-accordions" aria-label="Footer navigation">
         {groups.map((group) => (
           <details key={group.title}>
-            <summary>{group.title}</summary>
+            <summary>{group.title}<ChevronDown className="footer-chevron" aria-hidden="true" /></summary>
             <div className="footer-links">
               {group.links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
             </div>
