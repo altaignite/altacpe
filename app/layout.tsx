@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'International Focus Solution | Nedbank Wealth',
-  description: 'A fully integrated, multicurrency international banking and investment solution.',
+  title: 'Alta Professional Accreditation | Continuing Professional Education',
+  description: 'Alta Professional Accreditation accredits training institutions and providers delivering credible continuing professional education.',
   generator: 'v0.app',
   icons: {
     icon: [

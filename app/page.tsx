@@ -1,4 +1,4 @@
-import { ArrowRight, Menu, Search, LockKeyhole, Globe2, HandCoins } from 'lucide-react'
+import { ArrowRight, Menu, Search, LockKeyhole, ShieldCheck, GraduationCap, Building2, BadgeCheck } from 'lucide-react'
 
 const heroImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2466-OL1H7q5dUWihwuqs4l94sT9TYXoSQW.jpeg'
 
@@ -42,27 +42,41 @@ export default function Page() {
   return (
     <main className="page-shell">
       <Header />
-      <section className="hero-image" aria-label="International Focus Solution">
-        <img src={heroImage} alt="Businessman seated in a private aircraft using his phone" />
+      <section className="hero-image" aria-label="Alta Professional Accreditation">
+        <img src={heroImage} alt="Professional learning session" />
       </section>
       <section className="intro-section">
-        <h1>International Focus<br />Solution</h1>
-        <p className="lead">A fully integrated, multicurrency international banking and investment solution with digital access, a debit card, and jurisdictional reach in the Isle of Man, London, and Jersey.</p>
-        <p className="minimum-label">Minimum investment</p>
-        <p className="minimum-value">R500 000</p>
-        <a className="text-link" href="#rates">View rates &amp; fees <ArrowRight aria-hidden="true" /></a>
-        <a className="contact-button" href="#contact">Get in touch</a>
+        <p className="eyebrow">Private continuing professional education body</p>
+        <h1>Raise the standard<br />of professional learning.</h1>
+        <p className="lead">Alta Professional Accreditation accredits training institutions and providers that deliver credible, relevant, and measurable continuing professional education.</p>
+        <a className="text-link" href="#about">Discover Alta <ArrowRight aria-hidden="true" /></a>
+        <a className="contact-button" href="#contact">Become accredited</a>
       </section>
-      <section className="benefits-section" id="contact">
-        <h2>What you get</h2>
-        <Benefit title="Global banking" icon={<Globe2 aria-hidden="true" />}>
-          Get an optional Visa debit card that is widely accepted worldwide. Once your Focus Solution is open you will be able to transact via the Nedbank Private Wealth International app.
-        </Benefit>
-        <Benefit title="International lending" icon={<HandCoins aria-hidden="true" />}>
-          Portfolio backed lending in GBP, USD, or EUR. As well as UK property mortgages available in a range of repayment options, offering fixed and variable interest rates.
-        </Benefit>
+      <section className="benefits-section" id="about">
+        <p className="eyebrow eyebrow-dark">What we do</p>
+        <h2>Trusted learning.<br />Recognised standards.</h2>
+        <div className="benefit-grid">
+          <Benefit title="Accredit providers" icon={<Building2 aria-hidden="true" />}>
+            We evaluate training institutions and providers against clear standards for quality, governance, learner support, and delivery.
+          </Benefit>
+          <Benefit title="Support professionals" icon={<GraduationCap aria-hidden="true" />}>
+            We help organisations offer continuing professional education that keeps people current, capable, and ready for what is next.
+          </Benefit>
+          <Benefit title="Recognise quality" icon={<BadgeCheck aria-hidden="true" />}>
+            Our accreditation gives learners and employers confidence in the value and integrity of approved learning experiences.
+          </Benefit>
+        </div>
       </section>
-      <span id="rates" className="anchor-target" />
+      <section className="standards-section" id="contact">
+        <div className="standards-icon"><ShieldCheck aria-hidden="true" /></div>
+        <div>
+          <p className="eyebrow">For training institutions &amp; providers</p>
+          <h2>Build trust through accreditation.</h2>
+          <p>Start a conversation about your organisation, your programmes, and the standard you want to set.</p>
+          <a className="contact-button contact-button-dark" href="mailto:hello@alta.ac">Talk to Alta <ArrowRight aria-hidden="true" /></a>
+        </div>
+      </section>
+      <footer className="site-footer"><span>Alta Professional Accreditation</span><span>Continuing professional education</span></footer>
     </main>
   )
 }
