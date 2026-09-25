@@ -114,15 +114,16 @@ main [id] { scroll-margin-top: 24px; }
 .anchor-target { display: block; height: 1px; }
 @media (max-width: 700px) {
   .info-page { padding: 32px 20px 44px; }
-  .header-top { height: 72px; }
-  .brand-wrap { padding-left: 16px; }
+  .header-top { height: 64px; }
+  .brand-wrap { min-width: 0; padding-left: 16px; }
   .brand-mark { width: 142px; height: 44px; }
   .brand-name { font-size: 20px; gap: 4px; }
   .brand-name svg { width: 11px; }
-  .header-actions { gap: 12px; }
-  .header-actions button svg { width: 26px; height: 26px; }
-  .header-actions .menu-button { width: 72px; }
-  .header-actions .menu-button svg { width: 34px; height: 34px; }
+  .header-actions { flex-shrink: 0; gap: 2px; padding-right: 0; }
+  .header-actions button { width: 44px; height: 44px; }
+  .header-actions button svg { width: 22px; height: 22px; stroke-width: 1.6; }
+  .header-actions .menu-button { width: 64px; height: 64px; background: #292929; border-radius: 0; }
+  .header-actions .menu-button svg { width: 22px; height: 22px; stroke-width: 1.6; }
   .hero-section { grid-template-columns: 1fr; min-height: 0; }
   .hero-copy { padding: 32px 20px; }
   .hero-copy .eyebrow { margin-bottom: 18px; }
