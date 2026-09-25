@@ -76,7 +76,17 @@ export default function Page() {
           <a className="contact-button contact-button-dark" href="mailto:hello@alta.ac">Talk to Alta <ArrowRight aria-hidden="true" /></a>
         </div>
       </section>
-      <footer className="site-footer"><span>Alta Professional Accreditation</span><span>Continuing professional education</span></footer>
+      <footer className="site-footer">
+        <div className="footer-accordions">
+          <details><summary>Accreditation</summary><div className="footer-links"><a href="#about">Our standards</a><a href="#contact">Become accredited</a></div></details>
+          <details><summary>For providers</summary><div className="footer-links"><a href="#contact">Start an enquiry</a><a href="#about">Quality framework</a></div></details>
+          <details><summary>Legal information</summary><div className="footer-links"><a href="#contact">Terms and conditions</a><a href="#contact">Privacy notice</a></div></details>
+        </div>
+        <div className="footer-brand">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3A3E0E46-0426-4EDF-AC8F-CA8B2F7C05B4-tI1IJvQICyfqpm0QuX0L8K2t3XcM8j.png" alt="Alta Professional Accreditation" />
+          <p>Alta Professional Accreditation is a private continuing professional education body focused on accrediting training institutions and providers. Information on this website is provided for general purposes. Terms and conditions apply.</p>
+        </div>
+      </footer>
     </main>
   )
 }
