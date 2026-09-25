@@ -78,9 +78,10 @@ export default function Page() {
       </section>
       <footer className="site-footer">
         <div className="footer-accordions">
-          <details><summary>Accreditation</summary><div className="footer-links"><a href="#about">Our standards</a><a href="#contact">Become accredited</a></div></details>
-          <details><summary>For providers</summary><div className="footer-links"><a href="#contact">Start an enquiry</a><a href="#about">Quality framework</a></div></details>
-          <details><summary>Legal information</summary><div className="footer-links"><a href="#contact">Terms and conditions</a><a href="#contact">Privacy notice</a></div></details>
+          <details><summary>Accreditation</summary><div className="footer-links"><a href="#about">What is accreditation?</a><a href="#about">Our standards</a><a href="#about">Quality framework</a><a href="#contact">Become accredited</a></div></details>
+          <details><summary>For providers</summary><div className="footer-links"><a href="#contact">Start an enquiry</a><a href="#contact">Accreditation process</a><a href="#contact">Provider resources</a><a href="#contact">FAQs</a></div></details>
+          <details><summary>About Alta</summary><div className="footer-links"><a href="#about">Our role</a><a href="#about">Continuing professional education</a><a href="#contact">Contact us</a></div></details>
+          <details><summary>Legal information</summary><div className="footer-links"><a href="#contact">Terms and conditions</a><a href="#contact">Privacy notice</a><a href="#contact">Accessibility</a><a href="#contact">Complaints policy</a></div></details>
         </div>
         <div className="footer-brand">
           <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3A3E0E46-0426-4EDF-AC8F-CA8B2F7C05B4-tI1IJvQICyfqpm0QuX0L8K2t3XcM8j.png" alt="Alta Professional Accreditation" />
