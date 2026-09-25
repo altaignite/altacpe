@@ -1,14 +1,14 @@
-import { ArrowRight, ChevronDown, Menu, Search, LockKeyhole, Globe2, HandCoins } from 'lucide-react'
+import { ArrowRight, Menu, Search, LockKeyhole, Globe2, HandCoins } from 'lucide-react'
 
 const heroImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2466-OL1H7q5dUWihwuqs4l94sT9TYXoSQW.jpeg'
 
 function BrandMark() {
   return (
-    <div className="brand-mark" aria-label="Nedbank Wealth">
-      <svg viewBox="0 0 88 88" aria-hidden="true">
-        <path d="M14 25 36 10l19 14 18-14v42L51 67 34 55 14 68V25Z" />
-        <path d="M14 25 36 40l19-16 18 14M34 55V39M51 67V48" />
-      </svg>
+    <div className="brand-mark">
+      <img
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3A3E0E46-0426-4EDF-AC8F-CA8B2F7C05B4-tI1IJvQICyfqpm0QuX0L8K2t3XcM8j.png"
+        alt="Alta Professional Accreditation"
+      />
     </div>
   )
 }
@@ -18,7 +18,6 @@ function Header() {
     <header className="site-header">
       <div className="brand-wrap">
         <BrandMark />
-        <div className="brand-name">WEALTH <ChevronDown aria-hidden="true" /></div>
       </div>
       <div className="header-actions">
         <button aria-label="Search"><Search /></button>
