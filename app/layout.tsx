@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import Header from '@/components/site-header'
 import Footer from '@/components/site-footer'
 import './globals.css'
+import './design-system.css'
 
 export const metadata: Metadata = {
   title: 'Alta Professional Accreditation | Continuing Professional Education',

@@ -1,23 +1,27 @@
 'use client'
 
+import { Button, ButtonLink } from '@/components/ui/button'
+
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, ChevronDown, LockKeyhole, Menu, Search, X } from 'lucide-react'
+
+const APP_URL = 'https://app.altacpe.com'
 
 const navigation = [
   { id: 'cpe', label: 'Understanding CPE', links: [
     { href: '/cpe', label: 'What is continuing education?', description: 'Understand CPE and its role in professional learning.' },
     { href: '/cpe#professionals', label: 'CPE for professionals', description: 'Keep knowledge and skills relevant to your work.' },
-    { href: '/accreditation#quality', label: 'Recognising learning quality', description: 'Understand the value of provider accreditation.' },
+    { href: '/accreditation#quality', label: 'Recognising learning quality', description: 'Understand the value of Alta Professional Accreditation.' },
   ] },
   { id: 'accreditation', label: 'Accreditation', links: [
-    { href: '/accreditation', label: 'Provider accreditation', description: 'Accreditation for institutions and education providers.' },
+    { href: '/accreditation', label: 'Alta Professional Accreditation', description: 'Accreditation for institutions and education providers.' },
     { href: '/standards', label: 'What we assess', description: 'Explore the four areas of provider assessment.' },
-    { href: '/apply', label: 'Start an application enquiry', description: 'Discuss your institution and programmes with our team.' },
+    { href: APP_URL, label: 'Start an application enquiry', description: 'Discuss your institution and programmes with our team.' },
   ] },
   { id: 'providers', label: 'Training providers', links: [
     { href: '/accreditation', label: 'Institutions & education providers', description: 'Find out who our accreditation is for.' },
     { href: '/standards', label: 'Assessment requirements', description: 'See the areas considered during assessment.' },
-    { href: '/apply', label: 'Discuss your programmes', description: 'Take the first step towards provider accreditation.' },
+    { href: APP_URL, label: 'Discuss your programmes', description: 'Take the first step towards Alta Professional Accreditation.' },
     { href: '/faq', label: 'Provider FAQs', description: 'Answers to common accreditation questions.' },
   ] },
   { id: 'standards', label: 'Standards & quality', links: [
@@ -72,11 +76,11 @@ export default function Header() {
           <a href="/faq">FAQ</a>
         </nav>
         <div className="header-actions">
-          <button aria-label="Search"><span className="desktop-action-label">Search</span><Search /></button>
-          <button aria-label="Secure login"><span className="desktop-action-label">Log in</span><LockKeyhole /></button>
-          <button id="nav-toggle-all" className="menu-button" aria-label={openPanel === 'all' ? 'Close menu' : 'Open menu'} aria-expanded={openPanel === 'all'} aria-controls="all-navigation" onClick={() => setOpenPanel(openPanel === 'all' ? null : 'all')}>
+          <Button variant="ghost" aria-label="Search"><span className="desktop-action-label">Search</span><Search /></Button>
+          <ButtonLink variant="ghost" href={APP_URL} aria-label="Secure login"><span className="desktop-action-label">Log in</span><LockKeyhole /></ButtonLink>
+          <Button variant="ghost" id="nav-toggle-all" className="menu-button" aria-label={openPanel === 'all' ? 'Close menu' : 'Open menu'} aria-expanded={openPanel === 'all'} aria-controls="all-navigation" onClick={() => setOpenPanel(openPanel === 'all' ? null : 'all')}>
             {openPanel === 'all' ? <X /> : <Menu />}
-          </button>
+          </Button>
         </div>
       </div>
       <nav className="desktop-nav" aria-label="Main navigation">
@@ -84,9 +88,9 @@ export default function Header() {
           <a href="/">Home</a>
           {navigation.map((group) => (
             <div className="nav-group" key={group.id}>
-              <button id={`nav-toggle-${group.id}`} className="nav-trigger" aria-expanded={openPanel === group.id} aria-controls={`nav-panel-${group.id}`} onClick={() => setOpenPanel(openPanel === group.id ? null : group.id)}>
+              <Button variant="ghost" id={`nav-toggle-${group.id}`} className="nav-trigger" aria-expanded={openPanel === group.id} aria-controls={`nav-panel-${group.id}`} onClick={() => setOpenPanel(openPanel === group.id ? null : group.id)}>
                 {group.label}<ChevronDown aria-hidden="true" />
-              </button>
+              </Button>
               <div className="nav-dropdown" id={`nav-panel-${group.id}`} hidden={openPanel !== group.id}>
                 <ul>
                   {group.links.map((link) => <li key={link.href}><a href={link.href}><strong>{link.label}</strong><span>{link.description}</span></a></li>)}
@@ -94,13 +98,13 @@ export default function Header() {
               </div>
             </div>
           ))}
-          <a className="nav-apply" href="/apply">Apply for accreditation <ArrowRight aria-hidden="true" /></a>
+          <ButtonLink className="nav-apply" href={APP_URL}>Apply for accreditation <ArrowRight aria-hidden="true" /></ButtonLink>
         </div>
       </nav>
       <nav className="all-navigation" id="all-navigation" aria-label="All navigation" hidden={openPanel !== 'all'}>
         <div className="all-navigation-inner">
           {navigation.map((group) => <section key={group.id}><h2>{group.label}</h2><ul>{group.links.map((link) => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}</ul></section>)}
-          <a className="all-navigation-apply" href="/apply">Apply for accreditation <ArrowRight aria-hidden="true" /></a>
+          <ButtonLink className="all-navigation-apply" href={APP_URL}>Apply for accreditation <ArrowRight aria-hidden="true" /></ButtonLink>
         </div>
         <div className="mobile-navigation">
           <a className="mobile-nav-link" href="/">Home <ArrowRight aria-hidden="true" /></a>
@@ -115,7 +119,7 @@ export default function Header() {
           <a className="mobile-nav-link" href="/about">About us <ArrowRight aria-hidden="true" /></a>
           <a className="mobile-nav-link" href="/faq">FAQ <ArrowRight aria-hidden="true" /></a>
           <a className="mobile-nav-link" href="/contact">Contact us <ArrowRight aria-hidden="true" /></a>
-          <a className="mobile-nav-link mobile-nav-apply" href="/apply">Apply for accreditation <ArrowRight aria-hidden="true" /></a>
+          <ButtonLink className="mobile-nav-apply" href={APP_URL}>Apply for accreditation <ArrowRight aria-hidden="true" /></ButtonLink>
         </div>
       </nav>
     </header>

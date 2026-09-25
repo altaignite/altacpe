@@ -1,0 +1,29 @@
+import { ButtonLink } from '@/components/ui/button'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight, Check } from 'lucide-react'
+
+const APP_URL = 'https://app.altacpe.com'
+
+export const metadata = {
+  title: 'What is CPE? | Alta Professional Accreditation',
+  description: 'Understand continuing professional education and how credible CPE supports professional practice.',
+}
+
+export default function CpePage() {
+  return <main className="cpe-page">
+    <section className="cpe-hero section-wrap"><div className="cpe-hero-copy"><nav className="cpe-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">What is CPE?</span></nav><p className="eyebrow">What is CPE?</p><h1>Learning that keeps professional practice moving.</h1><p className="lead">Continuing professional education helps people maintain and develop the knowledge, skills and judgement their work demands. Alta Professional Accreditation helps providers make that learning easier to trust.</p><ButtonLink href={APP_URL}>Start free provider approval <ArrowRight aria-hidden="true" /></ButtonLink></div><figure className="cpe-hero-image"><Image src="/images/page-cpe.png" alt="Professional participating in a continuing education session" fill priority sizes="(max-width: 700px) 100vw, 46vw" /></figure></section>
+
+    <section className="cpe-intro section-wrap" id="professionals"><figure><Image src="/images/detail-cpe.png" alt="Professionals taking part in a learning discussion" fill sizes="(max-width: 700px) 100vw, 44vw" /></figure><div><p className="eyebrow">CPE in practice</p><h2>Learning that stays connected to the work people do.</h2><p>Alta Professional Accreditation recognises that continuing professional education is not simply attendance at an event. It is learning designed to help people remain capable and confident as standards, responsibilities, technology and professional expectations evolve.</p><p>A useful CPE experience starts with a real professional need. It gives learners a reason to engage, a clear idea of what they will gain and a practical route for applying that learning in their work.</p></div></section>
+
+    <section className="cpe-pillars"><div className="section-wrap"><div className="cpe-section-intro"><p className="eyebrow">The Alta Professional Accreditation view</p><h2>Three essentials that give professional learning its value.</h2></div><div className="cpe-pillar-grid"><article><span>01</span><h3>Relevance</h3><p>Alta Professional Accreditation looks for content that addresses the knowledge, skills or judgement professionals need now, with outcomes that explain why the learning matters.</p></article><article><span>02</span><h3>Purposeful design</h3><p>The format, facilitation and materials should help learners understand, reflect, practise and apply what they are learning.</p></article><article><span>03</span><h3>Responsible delivery</h3><p>Clear information, suitable support and reliable administration give professionals confidence in the learning experience.</p></article></div></div></section>
+
+    <section className="cpe-format section-wrap"><div><p className="eyebrow">Formats with purpose</p><h2>The format should serve the learning outcome.</h2><p>Alta Professional Accreditation recognises that courses, workshops, live online sessions, self-paced programmes, mentoring and simulations can all contribute to CPE. The right format depends on the subject, audience and depth of engagement the intended outcome requires.</p><p>For example, a technical update may call for concise expert instruction, while leadership development may need discussion, practice and reflection. High-quality providers make those choices deliberately.</p></div><figure><Image src="/images/standards-delivery.png" alt="Presenter delivering a professional learning session" fill sizes="(max-width: 700px) 100vw, 44vw" /></figure></section>
+
+    <section className="cpe-provider section-wrap"><figure><Image src="/images/standards-learning-quality.png" alt="Trainer leading a professional learning workshop" fill sizes="(max-width: 700px) 100vw, 44vw" /></figure><div><p className="eyebrow">Why providers matter</p><h2>The quality behind CPE is as important as the topic.</h2><p>Providers shape the learner experience through programme design, facilitator expertise, governance, learner support and the way feedback leads to improvement. Those choices determine whether a programme delivers genuine professional value.</p><p>Alta Professional Accreditation helps providers make that quality visible, giving learners, employers and partners more confidence in the education they choose.</p><ButtonLink href={APP_URL}>Start free provider approval <ArrowRight aria-hidden="true" /></ButtonLink></div></section>
+
+    <section className="cpe-review"><div className="section-wrap cpe-review-inner"><div><p className="eyebrow">Keep it current</p><h2>CPE should evolve as professional practice evolves.</h2></div><div><p>Alta Professional Accreditation sees feedback, completion information, facilitator insight and changes in a profession as useful signals for review. Strong providers use those signals to refresh content, improve delivery and maintain relevance over time.</p><p>That ongoing cycle helps professional learning stay credible, useful and worthy of the time learners invest in it.</p></div></div></section>
+
+    <section className="cpe-cta"><div className="section-wrap"><div><p className="eyebrow">Alta Professional Accreditation</p><h2>Start with free provider approval.</h2><p>Tell us about your CPE offer, then explore the accreditation route that fits your organisation or priority programmes.</p></div><ButtonLink variant="secondary" href={APP_URL}>Start free provider approval <ArrowRight aria-hidden="true" /></ButtonLink></div></section>
+  </main>
+}
